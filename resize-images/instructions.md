@@ -1,4 +1,6 @@
-# Instructions
+# Reducing Images Size with Same Results
+
+This script is designed to search for all images within a specified folder and its subdirectories that have a width greater than a specified value. It will then resize those images, reducing their width to the specified value while maintaining their original aspect ratio. This can be useful for preparing images for display on websites or other digital platforms where large image sizes can negatively impact loading times and user experience.
 
 ## Initialization
 
