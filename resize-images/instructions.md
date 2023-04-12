@@ -16,7 +16,7 @@ Once you have initialized the necessary files and added the images to the "image
 
 1. Open a terminal or command prompt window in the directory where the program is located.
 2. Run the command `node resize-images.js` to run the program using Node.js.
-3. The program will automatically search for images in the "image" folder and its subdirectories, and resize any images with a width greater than 2000 pixels while maintaining the original aspect ratio.
+3. The program will automatically search for images in the "image" folder and its subdirectories, and resize any images with a width greater than 1920 pixels (value can be modified) while maintaining the original aspect ratio.
 
 ## Creating an executable file
 
