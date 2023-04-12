@@ -12,8 +12,11 @@ function renameFilesAndFolders(path, replaceObj, caseOption, excludedExtensions)
       }
     });
 
-    //skips files that have the extensions included in parameter
-    if (excludedExtensions.includes(getFileExtension(file))) {
+    //files that should not be changed
+    const excludedFiles = ["rename-folders-files.js", "rename-folders-files.exe", "instructions.md", "parameters.json"]
+
+    //skips files that have the extensions included in parameter, and files that would break the program if altered
+    if (excludedFiles.includes(file) && excludedExtensions.includes(getFileExtension(file))) {
       console.log(`Skipping ${file}`);
       return;
     }
@@ -51,20 +54,7 @@ function getFileExtension(filename) {
   return '.' + filename.split('.').pop();
 }
 
-//letters to replace
-const replaceObj = {
-  ' ': '-',
-  '&': '-',
-  '%': ''
-};
+// Read parameters from JSON file
+const params = JSON.parse(fs.readFileSync('./parameters.json'));
 
-//word format: lowercase, uppercase or capitalize
-const caseOption = 'lowercase';
-
-
-//extensions to exclude
-const excludedExtensions = ['.js', '.exe', '.html', '.css', '.md'];
-
-
-renameFilesAndFolders('./', replaceObj, caseOption, excludedExtensions);
-
+renameFilesAndFolders(params.path, params.replaceObj, params.caseOption, params.extensions);

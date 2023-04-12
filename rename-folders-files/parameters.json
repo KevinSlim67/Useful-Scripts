@@ -1,0 +1,12 @@
+{
+    "path": "./",
+    "caseOption": "lowercase",
+    "extensions": [".js", ".exe", ".html", ".css", ".md", ".json"],
+    "replaceObj": {
+        " ": "-",
+        "_": "-",
+        "&": "-",
+        "%": "",
+        "$": ""
+    }
+}

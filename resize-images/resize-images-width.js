@@ -1,22 +1,13 @@
-//npm init -y
-//npm i sharp --save
-
-//node resize-images.js
-
-//or 
-
-//do this to get a .exe file
-//npm install -g pkg (installs pkg globally)
-//pkg resize-images.js --target node14-win-x64 --external sharp
-
-
 const fs = require('fs');
 const sharp = require('sharp');
 
-const maxWidth = 1920;
+
+// Read parameters from JSON file
+const params = JSON.parse(fs.readFileSync('./parameters.json'));
+const maxWidth = params.maxWidth;
 
 // Function to process an individual image file
-async function processImageFile(path) {
+async function processImageFile(path, maxWidth) {
   const image = sharp(path);
   const metadata = await image.metadata();
   if (metadata.width > maxWidth) {
@@ -42,7 +33,7 @@ async function processDirectory(path) {
       await processDirectory(`${path}/${item.name}`);
     } else {
       if (item.name.match(/\.(jpg|jpeg|png|webp)$/i)) {
-        await processImageFile(`${path}/${item.name}`);
+        await processImageFile(`${path}/${item.name}`, maxWidth);
       }
     }
   }
