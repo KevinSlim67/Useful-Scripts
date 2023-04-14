@@ -1,3 +1,4 @@
 {
-    "maxWidth": "1920"
+    "imagesDir": "images",
+    "maxWidth": 1920
 }
