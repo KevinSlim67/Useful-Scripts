@@ -1,0 +1,14 @@
+{
+  "name": "convert-images",
+  "version": "1.0.0",
+  "description": "A script that converts images",
+  "main": "convert-images.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kevin Slim",
+  "license": "ISC",
+  "dependencies": {
+    "sharp": "^0.32.0"
+  }
+}

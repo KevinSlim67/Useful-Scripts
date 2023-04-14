@@ -1,0 +1,6 @@
+{
+    "inputFormat": ["png", "jpg", "JPG", "webp", "jpeg"],
+    "outputFormat": "webp",
+    "inputDiv": "input",
+    "outputDiv": "output"
+}
